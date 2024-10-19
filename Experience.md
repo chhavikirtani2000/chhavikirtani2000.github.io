@@ -1,3 +1,7 @@
+layout: page
+title: "Experience"
+permalink: /experience
+
 # Experiences
 ## Software Engineering:
 My professional experience has been with Amazon and NatWest Group, working as a Software Developer (Backend). I am proficient in Java, and my everyday job involves making changes in the code bases to add new features or to fix existing features. I also extensively work with design documents needed for a software project.
