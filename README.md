@@ -1,5 +1,3 @@
-# Hi, I am Chhavi.
-
 # Background
 I am a software engineer by profession. I completed my undergraduate Bachelor of Technology degree from IIIT Delhi, India. I majored in Computer Science and Applied Mathematics, and recieved my degree with Honors.
 
