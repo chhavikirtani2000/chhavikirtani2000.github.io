@@ -1,49 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Chhavi Kirtani | AI & Software Engineer</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chhavi Kirtani | MS Computer Science @ UC San Diego</title>
+<meta name="description" content="Chhavi Kirtani — MS in Computer Science at UC San Diego. ML researcher working on efficient LLM reasoning, agentic AI, and medical AI.">
+<style>
+:root{--ink:#14202e;--muted:#5b6b7d;--line:#e2e8f0;--bg:#ffffff;--soft:#f7f9fc;--accent:#0f766e;--accent2:#0e4a6b;--badge:#eef6f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--accent2)}a:hover{text-decoration:underline}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;color:var(--ink);font-size:17px}.brand span{color:var(--accent)}
+.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.links a{color:var(--muted);text-decoration:none;font-weight:600}.links a:hover{color:var(--ink)}.links a.active{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:14px}
+.mobile-menu{display:none;border-top:1px solid var(--line);background:#fff}.mobile-menu a{display:block;padding:12px 20px;text-decoration:none;color:var(--ink);font-weight:600;border-bottom:1px solid var(--soft)}.mobile-menu a:hover{background:var(--soft)}.mobile-menu.open{display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.hero{padding:52px 0 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800;margin:0 0 10px}
+h1{font-size:44px;line-height:1.05;letter-spacing:-.03em;margin:0 0 10px}
+.subtitle{font-size:19px;color:var(--muted);margin:0 0 8px}
+.one-liner{font-size:18px;margin:14px 0 0;max-width:800px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;padding:11px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--ink)}
+.btn-primary{background:var(--ink);color:#fff}.btn-ghost{background:#fff;color:var(--ink)}.btn:hover{text-decoration:none;opacity:.92}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.stat{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--soft)}.stat b{font-size:18px;display:block}.stat span{font-size:12px;color:var(--muted)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.jump a{background:var(--soft);border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none}.jump a:hover{background:#eef2f6}.jump-label{font-size:13px;color:var(--muted);font-weight:700;align-self:center}
+section{padding:38px 0;border-bottom:1px solid var(--line)}
+h2{font-size:27px;letter-spacing:-.02em;margin:0 0 6px}.lead{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;gap:16px}.grid3{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:720px){.grid3,.grid2{grid-template-columns:1fr}h1{font-size:34px}.links{display:none}.menu-btn{display:block}}
+.card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.card h3{margin:0 0 6px;font-size:19px;line-height:1.3}
+.meta{font-size:13px;color:var(--muted);margin:0 0 8px}.meta b{color:var(--ink)}
+.badge{display:inline-block;background:var(--badge);color:#0f5132;border:1px solid #cde8e3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px}
+.tags{margin:10px 0 0;display:flex;gap:6px;flex-wrap:wrap}.tag{background:var(--soft);border:1px solid var(--line);padding:3px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+.link-slot{margin-top:12px;font-size:13px;color:var(--muted)}.link-slot span{border:1px dashed #cbd5e1;border-radius:8px;padding:4px 8px;display:inline-block;background:#fbfdff}
+details{margin-top:12px;border-top:1px solid var(--soft);padding-top:8px}details summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--accent2)}details p,details ul{font-size:15px;color:#334155}
+.diagram{border:1px solid var(--line);border-radius:12px;background:#fbfdff;padding:12px;margin:14px 0}.diagram figcaption{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+.timeline{display:grid;gap:0}.row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:4px}}
+.row .when{font-size:13px;color:var(--muted);font-weight:700}.row h3{margin:0;font-size:16px}.row p{margin:4px 0 0;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:720px){.two{grid-template-columns:1fr}}
+.empty{border:1px dashed #cbd5e1;border-radius:14px;padding:22px;text-align:center;color:var(--muted);background:#fbfdff}
+.contact-box{background:var(--ink);color:#fff;border-radius:16px;padding:26px}.contact-box h2{color:#fff}.contact-box p{color:#cbd5e1}.contact-box a{color:#fff}
+footer{padding:22px 0 40px;color:var(--muted);font-size:13px}.note{font-size:13px;color:var(--muted)}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:20;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.18);display:none}.back-top.show{display:block}
+</style>
 </head>
 <body>
+<header class="top"><nav class="nav" aria-label="Main">
+<a class="brand" href="#top">Chhavi <span>Kirtani</span></a>
+<div class="links"><a href="#about">About</a><a href="#journey">Journey</a><a href="#publications">Publications</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#reading">Currently Reading</a><a href="#contact">Book a Chat</a></div>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰ Menu</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="#about">About</a><a href="#journey">Journey</a><a href="#publications">Publications</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#reading">Currently Reading</a><a href="#contact">Book a Chat</a></div>
+</header>
 
-  <header>
-    <h1>Chhavi Kirtani</h1>
-    <p>Incoming MSCS @ UCSD | AI Researcher | SWE</p>
-    <p><a href="mailto:ckirtani@ucsd.edu">ckirtani@ucsd.edu</a> |
-       <a href="https://www.linkedin.com/in/chhavikirtani">LinkedIn</a> |
-       <a href="https://github.com/chhavikirtani2000">GitHub</a></p>
-  </header>
+<main class="wrap" id="top">
+<section class="hero" id="about">
+<p class="eyebrow">Portfolio</p>
+<h1>Chhavi Kirtani</h1>
+<p class="subtitle">MS in Computer Science @ UC San Diego · Sept 2025 – June 2027 · TA for Statistical NLP</p>
+<p class="one-liner">I work on <b>efficient, reliable LLMs</b> — models that reason well in low-resource languages, in multimodal science questions, and in high-stakes settings like medicine and disaster response, without needing ever-bigger models.</p>
+<div class="stats"><div class="stat"><b>3</b><span>Peer-reviewed papers<br>AAAI Oral · EMNLP Findings · ACL</span></div><div class="stat"><b>4</b><span>Additional preprints<br>Physics QA · RL · Prompting</span></div><div class="stat"><b>70+</b><span>Citations on Google Scholar<br>as of Oct 2026</span></div><div class="stat"><b>3 yrs</b><span>Production SWE<br>NatWest Fraud Prevention</span></div></div>
+<div class="cta"><a class="btn btn-primary" href="https://calendly.com/ckirtani-ucsd/30min" target="_blank" rel="noopener">Book a 30-min chat →</a><a class="btn btn-ghost" href="https://scholar.google.com/citations?user=yZTdS6AAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a class="btn btn-ghost" href="mailto:ckirtani@ucsd.edu">ckirtani@ucsd.edu</a></div>
+<nav class="jump" aria-label="Jump to section"><span class="jump-label">Jump to:</span><a href="#journey">Journey</a><a href="#publications">Publications</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#reading">Currently Reading</a><a href="#contact">Book a Chat</a></nav>
+<h2 style="margin-top:28px">Why this work?</h2>
+<p>Most LLM progress is measured in English, on clean benchmarks, with huge models. My work starts from the opposite end: <b>where models fail</b> — Hindi math, physics diagrams, peer review, rare medical outcomes. In those places, failure isn’t just a lower score. A student gets a wrong explanation. A reviewer misses a flaw. A patient is missed.</p>
+<p>That’s why I keep returning to three questions: <b>Can a small model do it?</b> <b>Can we trust its reasoning?</b> <b>Can it keep working when the world changes?</b> Those questions run through my math, physics, peer-review, medical, and multi-agent work — and through my AMD work on stopping wasted reasoning.</p>
+</section>
 
-  <section>
-    <h2>Projects</h2>
+<section id="journey">
+<h2>My journey</h2>
+<p class="lead">From applied math → production systems → research on reliable, efficient reasoning.</p>
+<div class="timeline">
+<div class="row"><div class="when">2018–2022<br>IIIT Delhi</div><div><h3>BS, CS + Applied Math (Honors, 3.9/4.0)</h3><p>Started in math + CS. First research on graph-based survival analysis — how to model patient risk when data is sparse and dependencies matter. That early taste of medical ML stayed with me.</p></div></div>
+<div class="row"><div class="when">2020–2022<br>First research</div><div><h3>Physics QA, math reasoning, and education</h3><p>Joined MIDAS Lab work on physics and math reasoning. Learned a hard lesson: prompting alone can’t fix a model that can’t reason step-by-step — you need training, structure, and better feedback.</p></div></div>
+<div class="row"><div class="when">2022–2025<br>NatWest</div><div><h3>Senior SWE, Fraud Prevention — production at scale</h3><p>Built and modernized distributed fraud systems. Production taught me what research often skips: latency, cost, reliability, and what happens when a system fails in the real world. I brought that lens back to research.</p></div></div>
+<div class="row"><div class="when">2024–2025<br>Return to research</div><div><h3>Small models, multilingual reasoning, and peer review</h3><p>Returned to research full-time. AAAI 2025 Oral on Hindi/English math, EMNLP 2025 Findings on AI peer review, ACL 2026 on cross-lingual reasoning with RL — all asking: can small, well-trained models be both capable and trustworthy?</p></div></div>
+<div class="row"><div class="when">2025–2027<br>UC San Diego</div><div><h3>MS CS + TA, Statistical NLP</h3><p>Coursework in AI agents, recommender systems, vision, NLP, and convex optimization. Course projects pushed me into two new directions: multi-agent resilience and medical EHR modeling.</p></div></div>
+<div class="row"><div class="when">2026<br>AMD</div><div><h3>ML Research Intern, Efficient ML</h3><p>Studied why reasoners “overthink” — keep reasoning long after they’re already right. Found a commit point where confidence stabilizes, and a way to stop there safely.</p></div></div>
+<div class="row"><div class="when">Now</div><div><h3>Seeking paid graduate research — medical AI + LLMs</h3><p>Looking to apply this thread — efficient reasoning + agentic evaluation + EHR modeling — to real clinical workflows, with a well-funded medical-department lab.</p></div></div>
+</div>
+</section>
 
-    <h3>Omdena Projects</h3>
-    <ul>
-      <li><b>Legal Chatbot:</b> Fine-tuned LegalRoBERTa and integrated Neo4j + Pinecone for RAG. Converted 5000+ legal documents to structured formats.</li>
-      <li><b>Ghanaian Sign Language Classifier:</b> Used MediaPipe + LSTM + augmentation to boost classification from 13% to 83%.</li>
-      <li><b>Yield Prediction from GEE:</b> Built yield models from GIS data (2012–2020) for 47 Kenyan counties with 94.5% accuracy.</li>
-    </ul>
+<section aria-label="Research focus">
+<h2>Research focus</h2>
+<div class="grid grid3">
+<div class="card"><h3>Efficient LLM Reasoning</h3><p>Small models, better training, less wasted compute. Curriculum learning, RL (PPO/DPO/GRPO), early stopping.</p></div>
+<div class="card"><h3>Agentic &amp; Multi-Agent AI</h3><p>Agents that plan, critique, and adapt — and evaluation that actually catches hallucination and shallow reasoning.</p></div>
+<div class="card"><h3>Medical AI</h3><p>EHR representation learning for rare outcomes. Temporal structure matters more than adding more features.</p></div>
+</div>
+</section>
 
-    <h3>Other Projects</h3>
-    <ul>
-      <li><b>Human Activity Recognition:</b> Built ML pipeline using OpenCV, LBP, HOG, and classifiers (KNN/XGBoost). Achieved 98.6% accuracy. <a href="https://docs.google.com/presentation/d/1EPBnzA2ixDJd0KRDgWNF1t6vcYUzanZKz84N0Fy9WK8">[Slide Deck]</a></li>
-    </ul>
-  </section>
+<!-- PUBLICATIONS -->
+<section id="publications">
+<h2>Publications</h2>
+<p class="lead">From Google Scholar. Click a title for the full paper. Expand any card for Why / How / Impact.</p>
 
-  <section>
-    <h2>Selected Publications</h2>
-    <ul>
-      <li><b>Multilingual Mathematical Reasoning</b> (AAAI’25 Oral) — <a href="https://arxiv.org/abs/2412.18415">ArXiv</a></li>
-      <li><b>ReviewEval: Evaluating AI-Generated Reviews</b> (Submitted to EMNLP 2025) — <a href="https://arxiv.org/abs/2502.11736">ArXiv</a></li>
-      <li><b>MM-PhyRLHF: Multimodal Physics QA with RLHF</b> — <a href="https://arxiv.org/abs/2404.12926">ArXiv</a></li>
-      <li><b>Enhancing LLMs for Physics Problem Solving (HAI-RLHF)</b></li>
-      <li><b>Population Phenotype GCN for Survival Analysis</b> (Thesis)</li>
-      <li><b>Knowledge Graphs for Physics QA</b> — <a href="https://arxiv.org/abs/2412.05453">ArXiv</a></li>
-      <li><b>Steps Are All You Need</b>: Prompt Engineering for STEM — <a href="https://arxiv.org/abs/2505.xxxxx">ArXiv</a></li>
-    </ul>
-    <p><em>Full list of publications is available on <a href="https://github.com/chhavikirtani2000">GitHub</a>.</em></p>
-  </section>
+<h3>Peer-reviewed</h3>
+<div class="grid">
+<article class="card">
+<h3><a href="http://arxiv.org/pdf/2412.18415v1.pdf" target="_blank" rel="noopener">Multilingual Mathematical Reasoning: Advancing Open-Source LLMs in Hindi and English</a></h3>
+<p class="meta"><span class="badge">AAAI 2025 · Oral</span> Anand, Prasad, <b>Kirtani</b>, et al. · 13 citations on Scholar</p>
+<p><b>Why:</b> Strong LLMs reason well in English math but stumble in Hindi — a language spoken by hundreds of millions. If small open models can’t reason across languages, they can’t serve the students who need them most.</p>
+<figure class="diagram"><svg viewBox="0 0 720 110" width="100%" role="img" aria-label="Diagram: Hindi and English problems go through bilingual curriculum, decomposition and rehearsal into an 8B model"><rect x="5" y="30" width="135" height="50" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="72" y="58" text-anchor="middle" font-size="12" font-weight="700">Hindi + English</text><text x="72" y="72" text-anchor="middle" font-size="11">math problems</text><text x="155" y="60" font-size="18">→</text><rect x="180" y="20" width="160" height="70" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="260" y="45" text-anchor="middle" font-size="12" font-weight="700">Bilingual curriculum</text><text x="260" y="60" text-anchor="middle" font-size="11">easy → hard</text><text x="260" y="74" text-anchor="middle" font-size="11">+ decomposition + rehearsal</text><text x="355" y="60" font-size="18">→</text><rect x="380" y="30" width="135" height="50" rx="10" fill="#dcfce7" stroke="#166534"/><text x="447" y="58" text-anchor="middle" font-size="12" font-weight="700">8B open model</text><text x="447" y="72" text-anchor="middle" font-size="11">small, not huge</text><text x="530" y="60" font-size="18">→</text><rect x="555" y="30" width="160" height="50" rx="10" fill="#eef6f5" stroke="#0f766e"/><text x="635" y="58" text-anchor="middle" font-size="12" font-weight="700">Beats Gemini 1.0 Pro</text><text x="635" y="72" text-anchor="middle" font-size="11">on EN + HI math</text></svg><figcaption>Small-model recipe: teach in order, break problems down, don’t forget earlier languages.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> Bilingual curriculum learning — train on progressively harder problems in both languages — plus a decomposition strategy that splits complex arithmetic into manageable steps, and rehearsal-based learning to avoid forgetting English while learning Hindi.</p>
+<p><b>Impact:</b> An 8B model outperformed Gemini 1.0 Pro on English and Hindi math in the paper’s evaluation, and bilingual training matched single-language training — one model, two languages, no trade-off.</p>
+<p><b>Journey:</b> This was my first lesson that <i>how</i> you train matters more than <i>how big</i> you train. It set up everything after: curriculum + RL in IRIS, and efficiency at AMD.</p>
+</details>
+<p class="link-slot">Paper: <a href="http://arxiv.org/pdf/2412.18415v1.pdf" target="_blank" rel="noopener">arXiv:2412.18415</a></p>
+</article>
 
+<article class="card">
+<h3><a href="https://aclanthology.org/2025.findings-emnlp.1120/" target="_blank" rel="noopener">ReviewEval: An Evaluation Framework for AI-Generated Reviews</a></h3>
+<p class="meta"><span class="badge">EMNLP 2025 · Findings</span> Garg, Prasad, Singhal, <b>Kirtani</b>, Mandal, Kumar · 29 citations on Scholar · Equal-contribution in arXiv v1</p>
+<p><b>Why:</b> Submissions are exploding, reviewers are scarce, and AI reviews are already being used — but often superficial, hallucinating, or unactionable. We need a way to tell a good AI review from a bad one before trusting it.</p>
+<figure class="diagram"><svg viewBox="0 0 720 130" width="100%" role="img" aria-label="Diagram: paper and guidelines feed ReviewAgent, which self-refines, then ReviewEval scores it and feeds back"><rect x="5" y="35" width="140" height="55" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="75" y="62" text-anchor="middle" font-size="12" font-weight="700">Paper +</text><text x="75" y="76" text-anchor="middle" font-size="11">venue guidelines</text><text x="160" y="68" font-size="18">→</text><rect x="185" y="20" width="170" height="85" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="270" y="45" text-anchor="middle" font-size="12" font-weight="700">ReviewAgent</text><text x="270" y="60" text-anchor="middle" font-size="11">draft → self-refine loop</text><text x="270" y="74" text-anchor="middle" font-size="11">tailored to venue</text><text x="270" y="88" text-anchor="middle" font-size="11">↺ improves itself</text><text x="370" y="68" font-size="18">→</text><rect x="395" y="20" width="175" height="85" rx="10" fill="#dcfce7" stroke="#166534"/><text x="482" y="45" text-anchor="middle" font-size="12" font-weight="700">ReviewEval scores</text><text x="482" y="60" text-anchor="middle" font-size="11">alignment · factuality</text><text x="482" y="74" text-anchor="middle" font-size="11">depth · actionability</text><text x="482" y="88" text-anchor="middle" font-size="11">guideline adherence</text><text x="585" y="68" font-size="18">→</text><rect x="610" y="35" width="105" height="55" rx="10" fill="#eef6f5" stroke="#0f766e"/><text x="662" y="62" text-anchor="middle" font-size="12" font-weight="700">Better review</text><text x="662" y="76" text-anchor="middle" font-size="11">external loop</text></svg><figcaption>Don’t just generate a review — measure it, then use the measurement to improve it.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> Two parts. <i>ReviewEval</i> — a framework that scores AI reviews on alignment with human judgment, factual accuracy, analytical depth, actionability, and adherence to venue guidelines. <i>ReviewAgent</i> — a generator with a venue-alignment mechanism and a self-refinement loop, plus an external loop that uses ReviewEval scores to improve the final review.</p>
+<p><b>Impact:</b> ReviewAgent improved actionable insights and depth over prior AI baselines and, on those dimensions, over expert reviews in the paper’s comparison — while giving the field standardized metrics instead of vibes.</p>
+<p><b>Journey:</b> This taught me that evaluation <i>is</i> the product. If you can’t measure hallucination and shallowness, you can’t fix them. That idea recurs in my multi-agent critiquing work.</p>
+</details>
+<p class="link-slot">Paper: <a href="https://aclanthology.org/2025.findings-emnlp.1120/" target="_blank" rel="noopener">EMNLP Findings 2025</a> · <a href="http://arxiv.org/pdf/2502.11736" target="_blank" rel="noopener">arXiv:2502.11736</a></p>
+</article>
+
+<article class="card">
+<h3><a href="https://aclanthology.org/2026.acl-long.1017/" target="_blank" rel="noopener">IRIS: Interleaved Reinforcement with Incremental Staged Curriculum for Cross-Lingual Mathematical Reasoning</a></h3>
+<p class="meta"><span class="badge">ACL 2026 · Long</span> Gupta, Vyalla, Anand, <b>Kirtani</b>, Cambria, et al.</p>
+<p><b>Why:</b> Curriculum learning helps, but models still produce inconsistent step-by-step reasoning — especially when transferring from English to Hindi/Marathi. The missing piece is <i>how much guidance</i> to give at each step, not just <i>how hard</i> the problem is.</p>
+<figure class="diagram"><svg viewBox="0 0 720 130" width="100%" role="img" aria-label="Diagram: vertical SFT curriculum and horizontal reverse curriculum RL combine with GRPO into IRIS"><rect x="5" y="20" width="190" height="50" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="100" y="42" text-anchor="middle" font-size="12" font-weight="700">Vertical: SFT curriculum</text><text x="100" y="57" text-anchor="middle" font-size="11">progressively harder problems</text><rect x="5" y="80" width="190" height="40" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="100" y="96" text-anchor="middle" font-size="12" font-weight="700">Horizontal: Reverse-curriculum RL</text><text x="100" y="110" text-anchor="middle" font-size="11">less step guidance over time</text><text x="210" y="70" font-size="18">→</text><rect x="235" y="35" width="190" height="60" rx="10" fill="#dcfce7" stroke="#166534"/><text x="330" y="60" text-anchor="middle" font-size="12" font-weight="700">GRPO + composite reward</text><text x="330" y="75" text-anchor="middle" font-size="11">correctness · step alignment</text><text x="330" y="88" text-anchor="middle" font-size="11">continuity · numeric</text><text x="440" y="70" font-size="18">→</text><rect x="465" y="35" width="250" height="60" rx="10" fill="#eef6f5" stroke="#0f766e"/><text x="590" y="60" text-anchor="middle" font-size="12" font-weight="700">CL-Math: 29k problems</text><text x="590" y="75" text-anchor="middle" font-size="11">step-annotated EN / HI / MR</text><text x="590" y="88" text-anchor="middle" font-size="11">→ stronger low-resource reasoning</text></svg><figcaption>Two axes at once: harder problems <i>and</i> less hand-holding.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> A two-axis framework: SFT on progressively harder problems (vertical) interleaved with reverse-curriculum RL that gradually removes step-by-step guidance (horizontal). A composite reward — correctness, step-wise alignment, continuity, numeric incentives — optimized with GRPO. New dataset CL-Math: 29k step-annotated problems in English, Hindi, and Marathi.</p>
+<p><b>Impact:</b> Consistent gains on multilingual math benchmarks, with the largest gains in low-resource and bilingual settings — +15.8% on the hardest Hindi math problems in my resume summary — and modest gains in high-resource languages.</p>
+<p><b>Journey:</b> The sequel to AAAI 2025. Curriculum alone wasn’t enough; we needed RL that teaches <i>independent</i> reasoning, not just copying steps.</p>
+</details>
+<p class="link-slot">Paper: <a href="https://aclanthology.org/2026.acl-long.1017/" target="_blank" rel="noopener">ACL 2026</a></p>
+</article>
+</div>
+
+<h3 style="margin-top:28px">Preprints &amp; co-authored work</h3>
+<p class="lead">Earlier physics-education work from IIIT Delhi — where the reasoning + RL thread started.</p>
+<div class="grid">
+<article class="card"><h3><a href="https://arxiv.org/abs/2404.12926v2" target="_blank" rel="noopener">MM-PhyRLHF: Reinforcement Learning Framework for Multimodal Physics Question-Answering</a></h3><p class="meta">arXiv 2024 · Kapuriya, <b>Kirtani</b>, et al. · 14 citations</p><p><b>Why:</b> Physics problems mix text + diagrams. Text-only models miss the diagram; vanilla fine-tuning hallucinates. <b>How:</b> LMM chatbot on MM-PhyQA (Indian high-school multimodal physics) with image captioning to explain diagrams + RLHF ranking to prefer human-like, truthful reasoning. <b>Impact:</b> Multimodal Physics VQA accuracy up ~35% in my resume summary; best setup reached 71.65% on the test set in the paper’s later evaluation.</p><p class="link-slot">Paper: <a href="https://arxiv.org/abs/2404.12926v2" target="_blank" rel="noopener">arXiv:2404.12926</a></p></article>
+<article class="card"><h3><a href="https://arxiv.org/abs/2412.06827v1" target="_blank" rel="noopener">Enhancing LLMs for Physics Problem-Solving using Reinforcement Learning with Human-AI Feedback</a></h3><p class="meta">arXiv 2024 · Anand, Prasad, <b>Kirtani</b>, et al. · 11 citations</p><p><b>Why:</b> Physics needs arithmetic + conceptual reasoning, not just fluent text. <b>How:</b> RLHAIF — preference data from human + AI feedback, reward model, then PPO / DPO / ReMax on PhyQA. <b>Impact:</b> Mistral-PPO stood out with 58.67 METEOR and 0.74 reasoning score in the paper’s evaluation.</p><p class="link-slot">Paper: <a href="https://arxiv.org/abs/2412.06827v1" target="_blank" rel="noopener">arXiv:2412.06827</a></p></article>
+<article class="card"><h3><a href="https://arxiv.org/abs/2412.05453v2" target="_blank" rel="noopener">Knowledge Graphs are all you need: Leveraging KGs in Physics Question Answering</a></h3><p class="meta">arXiv 2024 · Addala, Baghel, Jain, <b>Kirtani</b>, et al. · 4 citations</p><p><b>Why:</b> If a model decomposes a question badly, the answer will be wrong even if each step looks fluent. <b>How:</b> LLMs build a knowledge graph of the question’s internal logic, then that graph guides sub-question generation. <b>Impact:</b> KG-guided sub-questions stayed more faithful to the original question’s logic than standard decomposition.</p><p class="link-slot">Paper: <a href="https://arxiv.org/abs/2412.05453v2" target="_blank" rel="noopener">arXiv:2412.05453</a></p></article>
+<article class="card"><h3><a href="https://arxiv.org/abs/2412.05023" target="_blank" rel="noopener">Steps are all you need: Rethinking STEM Education with Prompt Engineering</a></h3><p class="meta">arXiv 2024 · Addala, Baghel, <b>Kirtani</b>, Anand, Shah · 3 citations</p><p><b>Why:</b> Few-shot + Chain-of-Thought help, but small open models struggle with analogical prompting. <b>How:</b> Surveyed prompting limits + proposed Analogical CoT to let smaller models use analogical prompting, with a Mixture-of-Experts model. <b>Impact:</b> Improved performance over standard LLM baselines in the paper’s comparison — and clarified where prompting stops helping and training must start.</p><p class="link-slot">Paper: <a href="https://arxiv.org/abs/2412.05023" target="_blank" rel="noopener">arXiv:2412.05023</a></p></article>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<p class="lead">Unpublished / course work. Links will be added as reports go to Drive or arXiv — placeholders below are intentional.</p>
+<div class="grid">
+<article class="card">
+<h3>EHR Representation Learning for PAD Amputation Risk</h3>
+<p class="meta"><span class="badge">Unpublished project</span> Medical AI · EHR · UCSD</p>
+<p><b>Why:</b> Amputation in peripheral arterial disease (PAD) is devastating and rare — ~0.63% in 6 months in this cohort. Catching high-risk patients early could enable interventions that prevent it. But EHR data is messy, sparse, and imbalanced: the wrong representation buries the signal.</p>
+<figure class="diagram"><svg viewBox="0 0 720 120" width="100%" role="img" aria-label="Diagram: OMOP EHR for 203k PAD patients feeds five models, compared on AUC-PR and sensitivity"><rect x="5" y="35" width="150" height="50" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="80" y="60" text-anchor="middle" font-size="12" font-weight="700">OMOP EHR</text><text x="80" y="74" text-anchor="middle" font-size="11">203,737 PAD patients</text><text x="170" y="65" font-size="18">→</text><rect x="195" y="15" width="190" height="90" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="290" y="38" text-anchor="middle" font-size="12" font-weight="700">5 representations</text><text x="290" y="53" text-anchor="middle" font-size="11">LR baseline · LR enriched</text><text x="290" y="67" text-anchor="middle" font-size="11">GRU (Doctor AI) · CNN</text><text x="290" y="81" text-anchor="middle" font-size="11">GRU + enriched</text><text x="290" y="95" text-anchor="middle" font-size="11">same cohort / split</text><text x="400" y="65" font-size="18">→</text><rect x="425" y="35" width="290" height="50" rx="10" fill="#dcfce7" stroke="#166534"/><text x="570" y="60" text-anchor="middle" font-size="12" font-weight="700">Temporal order wins</text><text x="570" y="74" text-anchor="middle" font-size="11">+104% AUC-PR · CNN 92% sens. @ 90% spec.</text></svg><figcaption>One cohort, one split, five models — so differences are about representation, not data luck.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> Systematic comparison holding cohort, labels, and temporal split constant. Axes isolated: feature enrichment (labs, drug duration, recency), temporal structure (GRU over visit sequences), and local co-occurrence (CNN over concept sequences with Word2Vec). Metrics: AUC-PR (primary, for extreme imbalance), AUC-ROC, Brier, sensitivity at 90% specificity.</p>
+<p><b>Impact:</b> Temporal order (+104% AUC-PR) beat feature enrichment alone (+52%). Combined gains were sub-additive (0.348 vs 0.425 if additive) — temporal structure already captures some severity. No single model won everything: CNN best sensitivity, enriched GRU best AUC-PR, enriched LR best calibration. Next: heterogeneous GNN for patient-similarity as a third signal axis.</p>
+<p><b>Journey:</b> My first medical-ML project where “more features” wasn’t the answer. It changed how I think about EHR: <i>order</i> is signal. This is the work I want to continue in a medical lab.</p>
+</details>
+<p class="link-slot">Report: <span>[Link: to be added]</span></p>
+</article>
+
+<article class="card">
+<h3>Agentic Resilience: Multi-Agent Systems in Disaster Simulations</h3>
+<p class="meta"><span class="badge">CSE 291 · A+ · Top 5</span> UCSD · Team of 5</p>
+<p><b>Why:</b> Disaster response needs 2,000+ agents coordinating under fire, smoke, and failing comms. Central planners blow up in tokens; agents that stick to stale plans die. We asked: can hierarchy + critiquing keep them alive and coordinated?</p>
+<figure class="diagram"><svg viewBox="0 0 720 140" width="100%" role="img" aria-label="Diagram: global leader brokers between regional leaders, agents act, critic checks and triggers replan"><rect x="260" y="5" width="200" height="35" rx="10" fill="#14202e"/><text x="360" y="27" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Global Leader — brokers idle agents</text><text x="360" y="50" font-size="16">↕</text><rect x="20" y="65" width="200" height="35" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="120" y="87" text-anchor="middle" font-size="12" font-weight="700">Regional Leader 1</text><rect x="260" y="65" width="200" height="35" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="360" y="87" text-anchor="middle" font-size="12" font-weight="700">Regional Leader 2 … k</text><rect x="500" y="65" width="200" height="35" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="600" y="87" text-anchor="middle" font-size="12" font-weight="700">Vigilant Critic — every h steps</text><text x="120" y="115" font-size="14">↓ agents act ↓</text><text x="600" y="115" font-size="14">HAZARDOUS → halt + replan</text></svg><figcaption>Hierarchy cuts context cost; critiquing cuts stale-plan deaths.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> <i>Robust Region-Based Adaptive Hierarchy</i> — split the map into regions, each with a regional leader running CAMON/HMAS locally; a global leader redistributes idle agents on demand. <i>Vigilant Critiquing</i> — every h steps, a critic audits the remaining plan against fresh perception; if HAZARDOUS, halt and replan. Stress-tested with a 5-point torture test: packet loss, command failure, fog-of-war, data decay, indecision.</p>
+<p><b>Impact:</b> +81% spatial reasoning, +58.6% plan adaptation (hierarchy), +12–14.6% plan adaptation in suppression tasks (critiquing). But stress tests were sobering: 30% packet loss and 50% command failure collapsed coordination — a warning for real deployment.</p>
+<p><b>Journey:</b> The most systems-y project I’ve done. It taught me that resilience isn’t a metric you add at the end — it’s the architecture.</p>
+</details>
+<p class="link-slot">Report: <span>[Link: to be added]</span></p>
+</article>
+
+<article class="card">
+<h3>Schema Linking with Supervised Fine-Tuning</h3>
+<p class="meta"><span class="badge">CSE 234 · Top 3 / 150</span> Data-centric ML</p>
+<p><b>Why:</b> Text-to-SQL fails before SQL even starts if the model links the question to the wrong tables/columns. With huge, cryptic schemas (SAP codes, NTSB), the model can’t see the right columns — or hallucinates ones that don’t exist.</p>
+<figure class="diagram"><svg viewBox="0 0 720 110" width="100%" role="img" aria-label="Diagram: question plus schema goes through serialization to Qwen LoRA to JSON with validation"><rect x="5" y="30" width="150" height="50" rx="10" fill="#e0f2fe" stroke="#0e4a6b"/><text x="80" y="58" text-anchor="middle" font-size="12" font-weight="700">Question +</text><text x="80" y="72" text-anchor="middle" font-size="11">DB schema</text><text x="170" y="60" font-size="18">→</text><rect x="195" y="20" width="180" height="70" rx="10" fill="#fef9c3" stroke="#854d0e"/><text x="285" y="45" text-anchor="middle" font-size="12" font-weight="700">Serialization</text><text x="285" y="60" text-anchor="middle" font-size="11">PK/FK + type tags</text><text x="285" y="74" text-anchor="middle" font-size="11">longer context 9k</text><text x="390" y="60" font-size="18">→</text><rect x="415" y="30" width="130" height="50" rx="10" fill="#dcfce7" stroke="#166534"/><text x="480" y="58" text-anchor="middle" font-size="12" font-weight="700">Qwen3-1.7B</text><text x="480" y="72" text-anchor="middle" font-size="11">LoRA SFT</text><text x="560" y="60" font-size="18">→</text><rect x="585" y="30" width="130" height="50" rx="10" fill="#eef6f5" stroke="#0f766e"/><text x="650" y="58" text-anchor="middle" font-size="12" font-weight="700">JSON + validate</text><text x="650" y="72" text-anchor="middle" font-size="11">drop invalid IDs</text></svg><figcaption>Make the schema legible, give the model room to see it, and never emit an invalid column.</figcaption></figure>
+<details><summary>How it works · Impact · Journey</summary>
+<p><b>How:</b> Qwen3-1.7B + LoRA (r=8, q/v proj). 14 ablations: base-model choice, LoRA capacity, question-aware ordering, PK/FK vs type annotation, SAP pruning, synthetic augmentation, and max sequence length. Final: PK/FK for most schemas, type annotation for NTSB, synthetic examples for SAP + NTSB, 9k context, strict JSON parsing + canonicalization that drops hallucinated tables/columns.</p>
+<p><b>Impact:</b> Leaderboard 0.462 → 0.729. Biggest wins: base-model choice and longer context — not bigger adapters. Paraphrasing and naive oversampling hurt; targeted synthetic data that taught new schema patterns helped.</p>
+<p><b>Journey:</b> A masterclass in data-centric ML: the bottleneck wasn’t the model, it was what the model could see and what data it had seen.</p>
+</details>
+<p class="link-slot">Report: <span>[Link: to be added]</span></p>
+</article>
+
+<article class="card"><h3>Selected earlier projects</h3>
+<p><b>Agentic chatbot for U.S. discrimination law</b> — <b>Why:</b> Legal help is hard to access. <b>How:</b> RAG + Neo4j knowledge graph, LegalRoBERTa fine-tuned on 5K+ Q&amp;A pairs. <b>Impact:</b> Structured, retrievable legal reasoning instead of free-form hallucination.</p>
+<p><b>Ghanaian Sign Language translator</b> — <b>Why:</b> Low-data, high-need translation. <b>How:</b> LSTM on MediaPipe keypoints + geometric augmentation for viewpoint diversity. <b>Impact:</b> Accuracy 13% → 83%.</p>
+<p><b>DAG-based deep survival model (BTech thesis)</b> — <b>Why:</b> Survival isn’t independent features. <b>How:</b> Graph-informed survival model capturing covariate dependencies. <b>Impact:</b> +10% over prior best; precursor to my EHR work.</p>
+<p class="link-slot">Links: <span>[Link: to be added]</span></p></article>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<p class="lead">Production + research — each taught the other something.</p>
+<div class="timeline">
+<div class="row"><div class="when">June–Sept 2026</div><div><h3>ML Research Intern — AMD, Efficient ML Team</h3><p><b>Why:</b> Reasoners waste tokens by “overthinking” after they’re already right — costly and sometimes harmful. <b>How:</b> Studied small dense + MoE reasoners on hard math/coding; built a benchmark to find a “commit point” where confidence sharply rises and stabilizes; confidence-based early stopping + speculative decoding work. <b>Impact:</b> 30–60% fewer reasoning tokens, no accuracy loss; recovered 60% of accuracy-degrading “bad spirals.”</p></div></div>
+<div class="row"><div class="when">July 2022–Sept 2025</div><div><h3>Senior SWE — NatWest Group, Fraud Prevention</h3><p><b>Why:</b> Fraud systems must be fast, correct, and always on. <b>How:</b> Refactored 4K+ LOC monolith into 6 Spring Boot/AWS microservices; redesigned Kafka/Beam + Spark pipelines; Oracle → Postgres migration with &lt;5 min downtime. <b>Impact:</b> 3× throughput, 80% lower DB cost, 60% fewer production issues, 98% test coverage. 2× Loving Your Work Awards.</p></div></div>
+<div class="row"><div class="when">May–July 2021</div><div><h3>SWE Intern — Amazon, Performance Advertising</h3><p>Built 2 Java microservices with REST APIs for Marketplace advertisers; multiprocessing/batch-write DynamoDB tool made backfilling 18× faster.</p></div></div>
+<div class="row"><div class="when">2020–2022, 2024–2025</div><div><h3>AI/ML Researcher — IIIT Delhi collaborators</h3><p>LLM/NLP research leading to AAAI, EMNLP, and ACL papers above — plus physics QA, brand recognition (YOLOv5 + OCR, 94%), and the discrimination-law chatbot.</p></div></div>
+<div class="row"><div class="when">May–Dec 2024</div><div><h3>Computer Vision Engineer — Omdena</h3><p>Low-cost 3D reconstruction for endangered cultural heritage (stereo + illumination modeling) + Ghanaian Sign Language translator.</p></div></div>
+</div>
+</section>
+
+<section id="education"><h2>Education &amp; skills</h2><div class="two"><div class="card"><h3>Education</h3><p><b>UC San Diego</b> — MS Computer Science, 2025–2027<br><b>IIIT Delhi</b> — BS CS + Applied Math (Honors, 3.9/4.0), 2018–2022 — top 7%</p></div><div class="card"><h3>Skills</h3><p>Python, PyTorch, C++, Java, SQL · LLMs, Multimodal ML · RL / SFT / DPO / GRPO / RLHF, LoRA/PEFT · Agentic AI, Evaluation, Efficient Inference · Distributed Systems, GPU Computing, Kubernetes</p></div></div></section>
+
+<section id="reading"><h2>Research papers I am currently reading</h2><p class="lead">A running list for a future paper reading club. Check back soon.</p><div class="empty"><p style="margin:0"><b>No papers listed yet.</b></p><p style="margin:6px 0 0">This section is intentionally blank for now — entries will be added here.</p></div>
+<!--
+FUTURE ENTRY TEMPLATE — copy one block per paper when ready:
+<article class="card"><h3>[Paper title]</h3><p class="meta">[Authors] · [Venue / Year]</p><p>Why I'm reading it: [1 line]</p><p>One takeaway: [1 line]</p><p class="link-slot">Paper: <span>[Link: to be added]</span></p></article>
+--></section>
+
+<section id="contact" style="border-bottom:none"><div class="contact-box"><h2>Book a chat</h2><p>For research collaboration, GSR / project discussions, or paper-club ideas — grab a 30-minute slot.</p><div class="cta"><a class="btn btn-primary" style="background:#fff;color:#14202e;border-color:#fff" href="https://calendly.com/ckirtani-ucsd/30min" target="_blank" rel="noopener">Book on Calendly →</a><a class="btn btn-ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)" href="https://scholar.google.com/citations?user=yZTdS6AAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a class="btn btn-ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)" href="mailto:ckirtani@ucsd.edu">Email me</a></div><p class="note" style="color:#94a3b8;margin-top:14px">LinkedIn: [Link to be added — replace this placeholder with your LinkedIn URL]</p></div></section>
+</main>
+<footer><div class="wrap">© <span id="year">2026</span> Chhavi Kirtani · Built for GitHub Pages · Last updated Oct 2026 · Publication details from Google Scholar + arXiv / ACL Anthology</div></footer>
+<button class="back-top" id="backTop" aria-label="Back to top">↑ Top</button>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+var btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
+btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');btn.textContent=open?'✕ Close':'☰ Menu';});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='☰ Menu';});});
+var navLinks=document.querySelectorAll('.links a');
+var sections=['about','journey','publications','projects','experience','reading','contact'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){navLinks.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(function(s){obs.observe(s);});
+var topBtn=document.getElementById('backTop');window.addEventListener('scroll',function(){topBtn.classList.toggle('show',window.scrollY>600);});topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
 </body>
 </html>
